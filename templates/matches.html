@@ -1,0 +1,361 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+    <div class="hero overlay" style="background-image: url('images/bg_3.jpg');">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5 mx-auto text-center">
+            <h1 class="text-white">Matches</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, molestias repudiandae pariatur.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    
+    <div class="container">
+      
+
+      <div class="row">
+        <div class="col-lg-12">
+          
+          <div class="d-flex team-vs">
+            <span class="score">{{game.club_1_result}}-{{game.club_2_result}}</span>
+            <div class="team-1 w-50">
+              <div class="team-details w-100 text-center">
+                <img src="{{game.match.club_1.img.url}}" alt="Image" class="img-fluid">
+                <h3>{{game.match.club_1.name}}
+                  {% if game.club_1_result > game.club_2_result %}
+                  <span>(G'alaba)</span>
+                  {% elif game.club_1_result == game.club_2_result %}
+                  <span>(Durang)</span>
+                  {% elif game.club_1_result < game.club_2_result %}
+                  <span>(Mag'lubiyat)</span>
+                  {% endif %}
+                </h3>
+                <ul class="list-unstyled">
+                  {% if game.club_1_muallif1 is not None %}
+                                <li>{{game.club_1_muallif1}}</li>
+                            {% else %}
+                            {% endif %}
+                              {% if game.club_1_muallif2 is not None %}
+                                    <li>{{game.club_1_muallif2}}</li>
+                              {% else %}
+                            {% endif %}
+                                  {% if game.club_1_muallif3 is not None %}
+                                    <li>{{game.club_1_muallif3}}</li>
+                              {% else %}
+                            {% endif %}
+                            {% if game.club_1_muallif4 is not None %}
+                                    <li>{{game.club_1_muallif4}}</li>
+                              {% else %}
+                            {% endif %}
+                            {% if game.club_1_muallif5 is not None %}
+                                    <li>{{game.club_1_muallif5}}</li>
+                                   {% else %}
+                            {% endif %}
+                                  {% if game.club_1_muallif6 is not None %}
+                                    <li>{{game.club_1_muallif6}}</li>
+                              {% else %}
+                            {% endif %}
+                            {% if game.club_1_muallif7 is not None %}
+                                    <li>{{game.club_1_muallif7}}</li>
+                              {% else %}
+                            {% endif %}
+                            {% if game.club_1_muallif8 is not None %}
+                                    li>{{game.club_1_muallif8}}<li>
+                              {% else %}
+                            {% endif %}
+                            {% if game.club_1_muallif9 is not None %}
+                                    <li>{{game.club_1_muallif9}}</li>
+                              {% else %}
+                            {% endif %}
+                            {% if game.club_1_muallif10 is not None %}
+                                    <li>{{game.club_1_muallif10}}</li>
+                              {% else %}
+                            {% endif %}
+                </ul>
+              </div>
+            </div>
+            <div class="team-2 w-50">
+              <div class="team-details w-100 text-center">
+                <img src="{{game.match.club_2.img.url}}" alt="Image" class="img-fluid">
+                <h3>{{game.match.club_2.name}}
+                  {% if game.club_2_result > game.club_1_result %}
+                  <span>(G'alaba)</span>
+                  {% elif game.club_2_result == game.club_1_result %}
+                  <span>(Durang)</span>
+                  {% elif game.club_2_result < game.club_1_result %}
+                  <span>(Mag'lubiyat)</span>
+                  {% endif %}
+                </h3>
+                <ul class="list-unstyled">
+                    {% if game.club_2_muallif1 is not None %}
+                                <li>{{game.club_2_muallif1}}</li>
+                            {% else %}
+                            {% endif %}
+                              {% if game.club_2_muallif2 is not None %}
+                                    <li>{{game.club_2_muallif2}}</li>
+                              {% else %}
+                            {% endif %}
+                                  {% if game.club_2_muallif3 is not None %}
+                                    <li>{{game.club_2_muallif3}}</li>
+                              {% else %}
+                            {% endif %}
+                            {% if game.club_2_muallif4 is not None %}
+                                    <li>{{game.club_2_muallif4}}</li>
+                              {% else %}
+                            {% endif %}
+                            {% if game.club_2_muallif5 is not None %}
+                                    <li>{{game.club_2_muallif5}}</li>
+                                   {% else %}
+                            {% endif %}
+                                  {% if game.club_2_muallif6 is not None %}
+                                    <li>{{game.club_2_muallif6}}</li>
+                              {% else %}
+                            {% endif %}
+                            {% if game.club_2_muallif7 is not None %}
+                                    <li>{{game.club_2_muallif7}}</li>
+                              {% else %}
+                            {% endif %}
+                            {% if game.club_2_muallif8 is not None %}
+                                    <li>{{game.club_2_muallif8}}</li>
+                              {% else %}
+                            {% endif %}
+                            {% if game.club_2_muallif9 is not None %}
+                                    <li>{{game.club_2_muallif9}}</li>
+                              {% else %}
+                            {% endif %}
+                            {% if game.club_2_muallif10 is not None %}
+                                    <li>{{game.club_2_muallif10}}</li>
+                              {% else %}
+                            {% endif %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+    
+    <div class="site-section bg-dark">
+      <div class="container">
+        
+        <div class="row mb-5">
+          <div class="col-lg-12">
+            <div class="widget-next-match">
+              <div class="widget-title">
+                <h3>Next Match</h3>
+              </div>
+              <div class="widget-body mb-3">
+                <div class="widget-vs">
+                  <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                    <div class="team-1 text-center">
+                      <img src="{{next.club_1.img.url}}" alt="Image">
+                      <h3>{{next.club_1.name}}</h3>
+                    </div>
+                    <div>
+                      <span class="vs"><span>VS</span></span>
+                    </div>
+                    <div class="team-2 text-center">
+                      <img src="{{next.club_2.img.url}}" alt="Image">
+                      <h3>{{next.club_2.name}}</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center widget-vs-contents mb-4">
+                <h4>{{next.turnir.name}}</h4>
+                <p class="mb-5">
+                  <span class="d-block">{{next.date}}</span>
+                  <strong class="text-primary">{{next.stadium}}</strong>
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 title-section">
+            <h2 class="heading">Upcoming Match</h2>
+          </div>
+          {% for i in all %}
+          <div class="col-lg-6 mb-4">
+            <div class="bg-light p-4 rounded">
+              <div class="widget-body">
+                  <div class="widget-vs">
+                    <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                      <div class="team-1 text-center">
+                        <img src="{{i.first_team.img.url}}" alt="Image">
+                        <h3>{{i.first_team.name}}</h3>
+                      </div>
+                      <div>
+                        <span class="vs"><span>VS</span></span>
+                      </div>
+                      <div class="team-2 text-center">
+                        <img src="{{i.second_team.img.url}}" alt="Image">
+                        <h3>{{i.second_team.name}}</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-center widget-vs-contents mb-4">
+                  <h4>{{i.tournament}}</h4>
+                  <p class="mb-5">
+                    <span class="d-block">{{i.date}}</span>
+                    <strong class="text-primary">{{i.stadium}}</strong>
+                  </p>
+
+                </div>
+              
+            </div>
+          </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div> <!-- .site-section -->
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 title-section">
+            <h2 class="heading">Videos</h2>
+          </div>
+          <div class="col-6 text-right">
+            <div class="custom-nav">
+            <a href="#" class="js-custom-prev-v2"><span class="icon-keyboard_arrow_left"></span></a>
+            <span></span>
+            <a href="#" class="js-custom-next-v2"><span class="icon-keyboard_arrow_right"></span></a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="owl-4-slider owl-carousel">
+          <div class="item">
+            <div class="video-media">
+              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
+                <span class="icon mr-3">
+                  <span class="icon-play"></span>
+                </span>
+                <div class="caption">
+                  <h3 class="m-0">Dogba set for Juvendu return?</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="video-media">
+              <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
+                <span class="icon mr-3">
+                  <span class="icon-play"></span>
+                </span>
+                <div class="caption">
+                  <h3 class="m-0">Kai Nets Double To Secure Comfortable Away Win</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="video-media">
+              <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
+                <span class="icon mr-3">
+                  <span class="icon-play"></span>
+                </span>
+                <div class="caption">
+                  <h3 class="m-0">Romolu to stay at Real Nadrid?</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="video-media">
+              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
+                <span class="icon mr-3">
+                  <span class="icon-play"></span>
+                </span>
+                <div class="caption">
+                  <h3 class="m-0">Dogba set for Juvendu return?</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="video-media">
+              <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
+                <span class="icon mr-3">
+                  <span class="icon-play"></span>
+                </span>
+                <div class="caption">
+                  <h3 class="m-0">Kai Nets Double To Secure Comfortable Away Win</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="video-media">
+              <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
+                <span class="icon mr-3">
+                  <span class="icon-play"></span>
+                </span>
+                <div class="caption">
+                  <h3 class="m-0">Romolu to stay at Real Nadrid?</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container site-section">
+      <div class="row">
+        <div class="col-6 title-section">
+          <h2 class="heading">Our Blog</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="custom-media d-flex">
+            <div class="img mr-4">
+              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+            </div>
+            <div class="text">
+              <span class="meta">May 20, 2020</span>
+              <h3 class="mb-4"><a href="#">Romolu to stay at Real Nadrid?</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus deserunt saepe tempora dolorem.</p>
+              <p><a href="#">Read more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="custom-media d-flex">
+            <div class="img mr-4">
+              <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+            </div>
+            <div class="text">
+              <span class="meta">May 20, 2020</span>
+              <h3 class="mb-4"><a href="#">Romolu to stay at Real Nadrid?</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus deserunt saepe tempora dolorem.</p>
+              <p><a href="#">Read more</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{%endblock%}
